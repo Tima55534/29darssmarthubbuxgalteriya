@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomoddiy Aktivlar - 29 Dars</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #D2FF28;
+            --dark-bg: #111311;
+            --card-bg: #1B1E1C;
+            --text-white: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background-color: var(--dark-bg) !important;
+            color: var(--text-white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+            background-image: radial-gradient(circle at 10% 20%, rgba(210, 255, 40, 0.12) 0%, transparent 60%) !important;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
+            max-width: 100%;
+            max-height: 100%;
+            aspect-ratio: auto;
+            border: none !important;
+            box-shadow: none !important;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            display: none !important;
+        }
+
+        .title-wrapper {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.6rem !important;
+            color: var(--primary-green) !important;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-green) !important;
+            padding-bottom: 8px;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .highlight {
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .glass-box {
+            background: var(--card-bg) !important;
+            border: 1px solid rgba(210, 255, 40, 0.12) !important;
+            border-radius: 16px !important;
+            padding: 35px 45px !important;
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+            backdrop-filter: none !important;
+        }
+
+        .main-text {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .calc-step {
+            background: #232623 !important;
+            border: none !important;
+            border-left: 3px solid var(--primary-green) !important;
+            padding: 18px 22px !important;
+            margin-bottom: 16px;
+            border-radius: 8px !important;
+            font-size: 1.2rem !important;
+            line-height: 1.5;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .calc-step-title {
+            font-size: 1.25rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .section-header {
+            font-size: 2.8rem !important;
+            font-weight: 800;
+            text-align: center;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            border: none !important;
+        }
+
+        .topic-subheader {
+            font-size: 2.3rem !important;
+            font-weight: 700;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 10px;
+            font-size: 1.15rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 14px 18px;
+            line-height: 1.4;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        th {
+            background-color: rgba(210, 255, 40, 0.05);
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        td {
+            background-color: transparent;
+            color: #eeeeee;
+        }
+
+        /* Controls overrides */
+        .controls {
+            position: absolute !important;
+            bottom: 30px !important;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .control-btn {
+            background: #0f1310 !important;
+            border: 1.5px solid rgba(210, 255, 40, 0.4) !important;
+            color: var(--primary-green) !important;
+            width: 45px !important;
+            height: 45px !important;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: none !important;
+        }
+
+        .control-btn:hover {
+            border-color: var(--primary-green) !important;
+            background: rgba(210, 255, 40, 0.1) !important;
+        }
+
+        .quote-style {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide {
+            padding: 40px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slides-container">
+        <!-- Slide 1: Intro -->
+        <div class="slide active" id="slide-1">
+            <div class="section-header">4-BO‘LIM: AKTIVLAR HISOBI</div>
+            <div class="section-header" style="font-size: 1.8rem !important; opacity: 0.8; margin-top: -10px;">29-dars
+            </div>
+            <h1 class="topic-subheader" style="line-height: 1.4; margin-top: 30px;">
+                Nomoddiy aktivlar bo‘yicha ikki yoqlama yozuvlar<br>va Asosiy vosita bilan farqi
+            </h1>
+        </div>
+
+        <!-- Slide 2: Provodkalar -->
+        <div class="slide" id="slide-2">
+            <div class="title-wrapper">
+                <h2>Nomoddiy aktivlar provodkalari</h2>
+            </div>
+            <div class="glass-box">
+                <p class="quote-style">"Buxgalteriya hisobida nomoddiy aktivlar bilan bog‘liq <strong
+                        class="highlight">asosiy operatsiyalar</strong> quyidagicha aks ettiriladi."</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operatsiya mazmuni</th>
+                            <th>Debet</th>
+                            <th>Kredit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NA sotib olinganda (qiymati shakllanishi)</td>
+                            <td>0830 <span style="font-size: 1rem; color: #999;">(NAga kapital qo'yilmalar)</span></td>
+                            <td>6010 <span style="font-size: 1rem; color: #999;">(Yetkazib beruvchilar)</span></td>
+                        </tr>
+                        <tr>
+                            <td>NA foydalanishga topshirilganda</td>
+                            <td>0400 <span style="font-size: 1rem; color: #999;">(NA turlari)</span></td>
+                            <td>0830 <span style="font-size: 1rem; color: #999;">(NAga kapital qo'yilmalar)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Har oyda amortizatsiya hisoblanganda</td>
+                            <td>9420 <span style="font-size: 1rem; color: #999;">(Xarajatlar)</span></td>
+                            <td>0500 <span style="font-size: 1rem; color: #999;">(NA amortizatsiyasi)</span></td>
+                        </tr>
+                        <tr>
+                            <td>NA sotilganda (boshlang'ich qiymati)</td>
+                            <td>9220 <span style="font-size: 1rem; color: #999;">(Boshqa aktivlarni sotish)</span></td>
+                            <td>0400 <span style="font-size: 1rem; color: #999;">(NA turlari)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 3: O'xshashliklar -->
+        <div class="slide" id="slide-3">
+            <div class="title-wrapper">
+                <h2>O‘xshashliklari</h2>
+            </div>
+            <div class="glass-box">
+                <p class="quote-style">"Ikkala aktiv turi ham korxonaning uzoq muddatli resurslari hisoblanadi."</p>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">🗓 Uzoq muddatli foydalanish:</span>
+                    Ikkala aktiv ham 1 yildan ortiq muddat davomida xizmat qiladi.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">🔄 Qiymatning ko‘chishi:</span>
+                    Ikkala aktiv ham o‘z qiymatini mahsulot tannarxiga qismlarga bo‘lib (amortizatsiya yoki eskirish
+                    orqali) o‘tkazadi.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">💰 Kapital xususiyati:</span>
+                    Sotib olish xarajatlari darhol xarajatga chiqarilmaydi, balki balansda aktiv sifatida
+                    kapitallashadi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Farqlar -->
+        <div class="slide" id="slide-4">
+            <div class="title-wrapper">
+                <h2>AV va NA farqlari</h2>
+            </div>
+            <div class="glass-box">
+                <p class="quote-style">"Asosiy farq ularning <strong class="highlight">fizik ko‘rinishi</strong> va
+                    ulardan foydalanish xarakteridadir."</p>
+
+                <table style="font-size: 1.1rem;">
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Xususiyati</th>
+                            <th style="width: 37.5%;">Asosiy vositalar (AV)</th>
+                            <th style="width: 37.5%;">Nomoddiy aktivlar (NA)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">Fizik ko'rinishi</td>
+                            <td>Moddiy-ashyoviy shaklga ega (bino, uskuna).</td>
+                            <td>Moddiy shaklga ega emas (huquqlar).</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Eskirish atamasi</td>
+                            <td>Eskirish</td>
+                            <td>Amortizatsiya</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Likvidligi</td>
+                            <td>Sotish nisbatan osonroq (bozor bor).</td>
+                            <td>Sotish qiyinroq (spetsifik xususiyatga ega).</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Hisob schyoti</td>
+                            <td>0100 schyotlar guruhi.</td>
+                            <td>0400 schyotlar guruhi.</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Eskirish schyoti</td>
+                            <td>0200 schyotlar guruhi.</td>
+                            <td>0500 schyotlar guruhi.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 5: Inventar jihozlarni hisobdan chiqarish -->
+        <div class="slide" id="slide-5">
+            <div class="title-wrapper">
+                <h2>Inventar jihozni hisobdan chiqarish</h2>
+            </div>
+            <div class="glass-box">
+                <p class="quote-style">"Bu <strong class="highlight">1 yil ichida foydalaniladigan</strong> inventar
+                    jihozlarni xarajatga olib borish hisoblanadi."</p>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">📊 Asosiy provodka:</span>
+                    <strong>Debet: 9430</strong> (yoki 9420) — <strong>Kredit: 1080</strong>. Ushbu provodka orqali
+                    jihoz qiymati to'liq xarajatga chiqariladi.
+                </div>
+
+                <div class="calc-step">
+                    <span class="calc-step-title">🗂 Balansdan tashqari hisob (008-shot):</span>
+                    Ekspluatatsiyadagi inventarlar nazorati uchun O'zbekiston BHMS bo'yicha <strong>008-shot: "Inventar
+                        va xo'jalik anjomlari"</strong> ishlatilishi mumkin.
+                </div>
+
+                <div class="calc-step" style="border-left-color: #ffcc00 !important;">
+                    <span class="calc-step-title" style="color: #ffcc00;">📌 008-shot provodkasi:</span>
+                    <strong>Debet 008</strong> — Jihozning miqdori va shartli qiymati bo'yicha (masalan, 1 so'm yoki
+                    inventar qiymati bilan).
+                    <br><br>
+                    <em>Eslatma:</em> Balansdan tashqari shotlarda ikki yoqlama yozuv (kredit qismi) ishlatilmaydi,
+                    faqat Debet bo'yicha kirim qilinadi.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Darsdan olingan natijalar -->
+        <div class="slide" id="slide-6">
+            <div class="title-wrapper">
+                <h2>Darsdan olingan natijalar</h2>
+            </div>
+            <div class="glass-box">
+                <div class="calc-step">
+                    <span class="calc-step-title">💡 1. Provodkalarni tushunish:</span>
+                    Nomoddiy aktivlar ham xuddi asosiy vositalar kabi ko'pincha "kapital qo'yilmalar" orqali shakllanib,
+                    uzoq muddatda amortizatsiya qilinishini o'rgandik.
+                </div>
+                <div class="calc-step">
+                    <span class="calc-step-title">⚠️ 2. AV va NA farqi:</span>
+                    Eng muhim farqi - NA ning fizik ko'rinishga ega emasligi hamda atamalarning turlichaligi (Eskirish
+                    va Amortizatsiya) ekanligini tushundik.
+                </div>
+                <div class="calc-step">
+                    <span class="calc-step-title">🛠 3. Inventarlarni hisobdan chiqarish:</span>
+                    1 yilgacha ishlatiladigan jihozlar qisqa muddatli xarajatga (9430/1080) chiqarilishini, ammo nazorat
+                    uchun uzoq muddatga 008-balansdan tashqari shotda yuritilishini bilib oldik.
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Yakun -->
+        <div class="slide" id="slide-7">
+            <h1 style="text-align: center; line-height: 1.3; font-size: 3.5rem; letter-spacing: -1px;">
+                O'SISHDAN<br>
+                <span style="color: var(--primary-green);">TO'XTAMANG!</span>
+                🚀
+            </h1>
+            <p
+                style="font-size: 1.3rem; color: var(--primary-green); margin-top: 25px; opacity: 0.6; text-align: center;">
+                DARS TUGADI</p>
+        </div>
+
+    </div>
+
+    <!-- Controls -->
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="controls">
+        <div class="control-btn" onclick="prevSlide()">❮</div>
+        <div class="control-btn" onclick="nextSlide()">❯</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
